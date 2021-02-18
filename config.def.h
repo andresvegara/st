@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack Nerd Font Mono:pixelsize=15:antialias=true:autohint=true"; 
+static char *font = "Terminus:pixelsize=18"; 
 /* Spare fonts */
 static char *font2[] = {
-  "JoyPixels:pixelsize=13:antialias=true:autohint=true",
-	"Inconsolata for Powerline:pixelsize=16:antialias=true:autohint=true", 
+  "JoyPixels:pixelsize=15:antialias=true:autohint=true",
+	"Inconsolata for Powerline:pixelsize=18:antialias=true:autohint=true", 
 };
 
 static int borderpx = 0;
@@ -71,7 +71,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -80,7 +80,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "st";
 
 /*
  * spaces per tab
@@ -100,35 +100,35 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 1;
+float alpha = 0.95;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
   /* 8 normal colors */
-"#16161c", /* black   */
-"#e95678", /* red     */
-"#29d398", /* green   */
-"#fab795", /* yellow  */
-"#26bbd9", /* blue    */
-"#ee64ac", /* magenta */
-"#59e1e3", /* cyan    */
-"#d5d8da", /* white   */
+"#000000", /* black   */
+"#fe0100", /* red     */
+"#33ff00", /* green   */
+"#feff00", /* yellow  */
+"#0066ff", /* blue    */
+"#cc00ff", /* magenta */
+"#00ffff", /* cyan    */
+"#d0d0d0", /* white   */
 
 /* 8 bright colors */
-"#5b5858", /* black   */
-"#ec6a88", /* red     */
-"#3fdaa4", /* green   */
-"#fbc3a7", /* yellow  */
-"#3fc4de", /* blue    */
-"#f075b5", /* magenta */
-"#6be4e6", /* cyan    */
-"#d5d8da", /* white   */
+"#808080", /* black   */
+"#fe0100", /* red     */
+"#33ff00", /* green   */
+"#feff00", /* yellow  */
+"#0066ff", /* blue    */
+"#cc00ff", /* magenta */
+"#00ffff", /* cyan    */
+"#FFFFFF", /* white   */
 
 [255]=0,
 
 /* special colors */
-"#1c1e26", /* background */
-"#e0e0e0", /* foreground */
+"#000000", /* background */
+"#FFFFFF", /* foreground */
 "#16161c",
 };
 
@@ -155,7 +155,7 @@ static unsigned int defaultrcs = 257;
  * 7: Blinking st cursor
  * 8: Steady st cursor
  */
-static unsigned int cursorstyle = 1;
+static unsigned int cursorstyle = 5;
 static Rune stcursor = 0x2603; /* snowman (U+2603) */
 
 /*
@@ -191,8 +191,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
-	{ ShiftMask,            Button5, kscrolldown,    {.i = 1} },
+	{ XK_ANY_MOD,            Button4, kscrollup,      {.i = 1} },
+	{ XK_ANY_MOD,            Button5, kscrolldown,    {.i = 1} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
