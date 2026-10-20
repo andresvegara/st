@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack Nerd Font Mono,Noto Color Emoji:size=11";
+static char *font = "Hack Nerd Font Mono:size=11";
 static int borderpx = 0;
 
 /*
