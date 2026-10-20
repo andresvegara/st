@@ -181,8 +181,10 @@ Reset font size.
 .B Shift-Insert
 Paste from the primary selection.
 .SH WM DEVELOPMENT
-This profile uses Hack Nerd Font Mono at 11 points, a Noto Color Emoji fallback,
+This profile uses Hack Nerd Font Mono at 11 points as its only primary font,
 a blinking block cursor, zero fixed padding and per-pixel window resizing.
+Missing glyphs use the existing Fontconfig fallback. Do not include an emoji
+font in the primary family list: it may be selected for the whole terminal.
 Emoji rendering depends on installed fonts and Xft; complex emoji sequences
 are not guaranteed. Blur is the compositor's responsibility.
 .PP
