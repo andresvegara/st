@@ -53,6 +53,7 @@ typedef struct {
 /* function definitions used in config.h */
 static void clipcopy(const Arg *);
 static void clippaste(const Arg *);
+static void mousescroll(const Arg *);
 static void numlock(const Arg *);
 static float parsealpha(const char *);
 static void selpaste(const Arg *);
@@ -176,7 +177,6 @@ static void resize(XEvent *);
 static void focus(XEvent *);
 static uint buttonmask(uint);
 static int mouseaction(XEvent *, uint);
-static void mousescroll(const Arg *);
 static void brelease(XEvent *);
 static void bpress(XEvent *);
 static void bmotion(XEvent *);
