@@ -3,6 +3,21 @@ st - simple terminal
 st is a simple terminal emulator for X which sucks less.
 
 
+wm development configuration
+----------------------------
+This checkout is not installed or activated. Validate from the parent wm
+repository with make test. Do not run the installation commands below during
+this preparation phase.
+
+The wm profile uses Hack Nerd Font Mono at 11 points, a Noto Color Emoji
+fallback, the existing Alacritty palette, zero fixed padding, a blinking block
+cursor, Ctrl+Insert copy and familiar copy/paste/zoom shortcuts. The alpha patch
+sets background opacity to 0.9; transparency and blur require a compositor.
+No blur implementation is added to st itself. Scrollback/reflow is not ready.
+Color emoji and visual rendering still need a later authorized visual test.
+TERM remains st-256color; prepare matching terminfo during future installation,
+including remote hosts where it is needed. Do not substitute TERM blindly.
+
 Requirements
 ------------
 In order to build st you need the Xlib header files.
