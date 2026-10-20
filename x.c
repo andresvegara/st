@@ -176,6 +176,7 @@ static void resize(XEvent *);
 static void focus(XEvent *);
 static uint buttonmask(uint);
 static int mouseaction(XEvent *, uint);
+static void mousescroll(const Arg *);
 static void brelease(XEvent *);
 static void bpress(XEvent *);
 static void bmotion(XEvent *);
@@ -481,6 +482,19 @@ mouseaction(XEvent *e, uint release)
 	}
 
 	return 0;
+}
+
+void
+mousescroll(const Arg *arg)
+{
+	Arg n = {.i = abs(arg->i)};
+
+	if (tisaltscreen())
+		ttysend(&(Arg){.s = arg->i > 0 ? "\031" : "\005"});
+	else if (arg->i > 0)
+		kscrollup(&n);
+	else
+		kscrolldown(&n);
 }
 
 void
