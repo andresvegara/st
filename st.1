@@ -180,6 +180,14 @@ Reset font size.
 .TP
 .B Shift-Insert
 Paste from the primary selection.
+.SH CLIPBOARD
+OSC 52 clipboard writes are enabled by default. Applications, including remote
+programs over SSH, can replace the system clipboard. Set allowwindowops to 0
+in config.h and rebuild to disable this.
+.PP
+Shift-mouse selection joins rows wrapped automatically by the terminal, but
+preserves explicit line breaks. Applications drawing rows separately may lose
+that wrapping information; use their own OSC 52 copy action when available.
 .SH WM DEVELOPMENT
 This profile uses Hack Nerd Font Mono at 11 points as its only primary font,
 a blinking block cursor, zero fixed padding and per-pixel window resizing.
