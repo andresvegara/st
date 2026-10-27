@@ -11,9 +11,9 @@ this preparation phase.
 
 The wm profile uses Hack Nerd Font Mono at 11 points as its only primary font,
 the existing Alacritty palette, zero fixed padding, a blinking block
-cursor, Ctrl+Insert copy and familiar copy/paste/zoom shortcuts. The alpha patch
-sets background opacity to 0.9; transparency and blur require a compositor.
-No blur implementation is added to st itself. Scrollback holds 2000 physical
+cursor, Ctrl+Insert copy and familiar copy/paste/zoom shortcuts. Backgrounds
+are opaque by default (alpha 1.0); -A can explicitly request transparency.
+No blur implementation is added to st itself; the wm compositor disables blur. Scrollback holds 2000 physical
 rows, with resize reflow of the default screen/history and separate alternate
 screen contents. Shift+PageUp/PageDown scrolls a page; the wheel scrolls three
 rows unless the application requests mouse events (Shift overrides it).
