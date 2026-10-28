@@ -9,7 +9,7 @@ This checkout is not installed or activated. Validate from the parent wm
 repository with make test. Do not run the installation commands below during
 this preparation phase.
 
-The wm profile uses Hack Nerd Font Mono at 11 points as its only primary font,
+The wm profile uses DejaVuSansM Nerd Font Mono at 12 points as its only primary font,
 the existing Alacritty palette, zero fixed padding, a blinking block
 cursor, Ctrl+Insert copy and familiar copy/paste/zoom shortcuts. Backgrounds
 are opaque by default (alpha 1.0); -A can explicitly request transparency.
